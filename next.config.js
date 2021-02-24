@@ -5,7 +5,7 @@ module.exports = {
     publicRuntimeConfig: {
         APP_NAME: 'justPractice',
         API_DEVELOPMENT: 'http://localhost:4000/api',
-        // API_PRODUCTION: 'https://justpractice123.herokuapp.com/api',
+        API_PRODUCTION: 'https://justpractice123.herokuapp.com/api',
         // PRODUCTION: false,
         // DOMAIN_DEVELOPMENT: 'https://localhost:4000',
         // DOMAIN_PRODUCTION: 'https://nextjsfrontend-ebon.vercel.app/',
