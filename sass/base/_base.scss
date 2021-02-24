@@ -21,11 +21,20 @@ body{
 
 }
 
-
-a {
+a, a:visited, a:active{
     text-decoration: none;
+
+
 }
+
 
 ul{
     list-style: none;
+
+a, a:visited, a:active{
+font-size: 1.2rem;
+font-style: italic;
+color: #4285f4;
+}
+    
 }

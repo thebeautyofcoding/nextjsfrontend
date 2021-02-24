@@ -11,22 +11,22 @@ const UserProfile = ({user, blogs, query}) => {
 
     const showUserBlogs = () => {
         return blogs.map((blog, i) => {
-           return <div key={i}><Link href={`/blogs/${blog.slug}`}><a>{blog.title}</a></Link></div>
+           return <li className="center" key={i}><Link href={`/blogs/${blog.slug}`}><a>{blog.title}</a></Link></li>
         })
     }
 
-    return <>
+    return <div className="container__column">
       
-            <p>Joined {moment(user.createdAt).fromNow()}</p>
+            <p className="success">Joined {moment(user.createdAt).fromNow()}</p>
 
         <img src={`${API}/user/photo/${user.username}`} />
         
 
-        <h5>Recent blogs by {user.name}</h5>
+        <h5 className="m-medium">Recent blogs by {user.name}</h5>
 
 
-        <p>{showUserBlogs()}</p>
-    </>
+       <ul className="container__column"> {showUserBlogs()}</ul>
+    </div>
 }
 
 

@@ -57,9 +57,9 @@ const SingleBlog = ({ blog, query }) => {
        return relatedPosts.map((blog, i) => {
            return <div className="thumbail-card" key={i}>
                 <div className="img img--small"><img  src={`${API}/blog/photo/${blog.slug}`}/></div>
-                <h3>{blog.title}</h3>
+                <h3 className="mt-small">{blog.title}</h3>
                 <div className="success">
-                    Posted {moment(blog.updatedAt).fromNow()} by&nbsp;<Link href={'/'}><a>{blog.postedBy.username}</a></Link>
+                    Posted {moment(blog.updatedAt).fromNow()} by&nbsp;<Link href={`/profile/${blog.postedBy.username}`}><a>{blog.postedBy.username}</a></Link>
                 </div>
             </div>
         })

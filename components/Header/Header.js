@@ -197,6 +197,8 @@ const router = useRouter()
         const linksMobile = document.getElementsByClassName('links-mobile')
         const mobileNav = document.getElementsByClassName('mobile-nav')
 
+
+
       linksMobile[0].classList.toggle("active")
         mobileNav[0].classList.toggle("active")
 
@@ -210,6 +212,21 @@ const router = useRouter()
 
 
 
+    }
+
+    const linkClickHandler = () => {
+        const linksMobile = document.getElementsByClassName('links-mobile')
+        const mobileNav = document.getElementsByClassName('mobile-nav')[0]
+        mobileNav.classList.remove('active')
+        linksMobile[0].classList.remove("active")
+        
+        // const links = document.getElementsByClassName('link-mobile')
+        // for (let i = 0; i < links.length; i++) {
+        //     links[i].classList.toggle("active")
+            
+
+        // }
+        
     }
 
      const[sideBarActive, setSidebarActive]= useState(false)
@@ -285,29 +302,29 @@ const router = useRouter()
                     <div className="container">
                         <ul className="links-mobile">
                             
-                            <li className="link-mobile">
-                                <Link href="/"><a>Home</a></Link>
+                            <li onClick={linkClickHandler} className="link-mobile">
+                                <Link  href="/"><a>Home</a></Link>
                             </li>
-                            <li className="link-mobile link-mobile__badge">
+                            <li onClick={linkClickHandler} className="link-mobile link-mobile__badge">
                                 <Link href="/blogs"><a><span className="badge__mobile">Blogs({blogsTotal})</span></a></Link>
                             </li>
                             {isAuth() &&
-                                <li className="link-mobile">
+                                <li  onClick={linkClickHandler}className="link-mobile">
                                     <Link href="/user"><a>{isAuth().name}'s Dashboard</a></Link>
                                 </li>
                             }
 
                             {!isAuth() &&
-                                (<li className="link-mobile">
+                                (<li onClick={linkClickHandler}className="link-mobile">
                                     <Link href="/login"><a>Login</a></Link>
                                 </li>)}
 
                             {!isAuth() &&
-                                <li className="link-mobile">
+                                <li onClick={linkClickHandler}className="link-mobile">
                                     <Link href="/register"><a>Register</a></Link>
                                 </li>}
                             <li>
-                                <button className="Button Button--red" onClick={() => {
+                                <button onClick={linkClickHandler} className="Button Button--red" onClick={() => {
 
                                     signout(dispatch(successSignout()))
                                 }}>Logout</button>   </li>

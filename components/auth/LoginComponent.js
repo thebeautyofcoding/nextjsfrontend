@@ -99,15 +99,15 @@ const router = useRouter()
     }
     const loginForm = () =>
      
-        <form className="container__row" onSubmit={submitHandler}>
+        <form className="container" onSubmit={submitHandler}>
             
-            <div className="form-component">
-            <input className="input" onChange={changeHandler('email')}name="email" type="email" placeholder="Type your email..." />
+            <div className="container">
+            <input className="input mt-small" onChange={changeHandler('email')}name="email" type="email" placeholder="Type your email..." />
             </div>
-            <div className="form-component">
-            <input className="input" onChange={changeHandler('password')} type="password" name="password" placeholder="Type your password..." />
+            <div className="container">
+            <input className="input m-small" onChange={changeHandler('password')} type="password" name="password" placeholder="Type your password..." />
             </div>
-        <div className="form-component">
+        <div className="container">
             <button className="Button" type="submit">Login</button>
             </div>
         </form>
@@ -121,7 +121,7 @@ const router = useRouter()
         <br />
         <div className="container">
         <Link href="auth/password/forgot">
-        <a className="Button">Reset password</a>
+        <a className="Button Button--red">Reset password</a>
             </Link>
             </div>
     </>

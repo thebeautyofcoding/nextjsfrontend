@@ -34,7 +34,7 @@ console.log(checkedCategories, checkedTags)
     })
     const { formData, title, photo, error, success } = values
     
-  
+ success && setTimeout(()=>setValues({...values, success:''}), 5000)
  const  [blogsTotal, setBlogsTotal]  = useState(0);
  
  
@@ -109,7 +109,8 @@ const [didMount, setDidMount]=useState(false)
         setValues({...values, formData: new FormData()})
     }, [router, success])
 
-        const handleBody = (body) => {
+    const handleBody = (body) => {
+        
             formData.set('body', body)
             setBody(body)
         }
@@ -119,13 +120,14 @@ const [didMount, setDidMount]=useState(false)
     const handleChange = (name) =>(e)=> {
         if (name === "title") {
             
-            setValues({...values, success:false, title: e.target.value })
+            setValues({...values, title: e.target.value})
             formData.set('title', e.target.value)
             
         
         }
         
         else {
+        
             formData.set('photo', e.target.files[0])
             setImage(URL.createObjectURL(e.target.files[0]))
         
@@ -225,7 +227,7 @@ const [didMount, setDidMount]=useState(false)
 
         return <>
             <div style={{ display: error ? 'flex' : 'none' }} className="error">{error}</div>
-            <div style={{ display: success ? 'flex': 'none' }} className="success">{success}</div>
+            <div style={{ display: success ? 'flex' : 'none' }} className="success">{success}</div>
         <div className="createBlogFormContainerWithImageUpload">
 
             
