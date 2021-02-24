@@ -1,0 +1,41 @@
+.img{
+  
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    position:relative;
+    
+    align-items: center;
+
+    margin:0 auto;
+
+    cursor:pointer;
+    
+
+    
+    &__small{
+        width: 17rem;
+        height:auto;
+        object-fit: cover;
+
+}
+&__big{
+    
+   
+    
+    width:100vw;
+  height: auto;
+  display:flex;
+  margin:0 auto;
+ 
+
+
+
+& img{
+    width: 100vw;
+    object-fit:cover;
+ 
+}
+}
+}
