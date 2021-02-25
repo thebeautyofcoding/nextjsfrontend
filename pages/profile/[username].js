@@ -11,7 +11,7 @@ const UserProfile = ({user, blogs, query}) => {
 
     const showUserBlogs = () => {
         return blogs.map((blog, i) => {
-           return <li className="center" key={i}><Link href={`/blogs/${blog.slug}`}><a>{blog.title}</a></Link></li>
+           return <li className="center search-results" key={i}><Link href={`/blogs/${blog.slug}`}><a>{blog.title}</a></Link></li>
         })
     }
 
