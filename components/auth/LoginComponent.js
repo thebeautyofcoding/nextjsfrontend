@@ -45,7 +45,7 @@ const router = useRouter()
            
                  axios({
                     method: 'post',
-                    url: 'https://justpractice123.herokuapp.com/api/signin',
+                    url: 'https://justpractice123.herokuapp.com/signin',
                     data: bodyFormData,
                     headers: {'Content-Type': 'multipart/form-data' }
                  }).then((data) => {
