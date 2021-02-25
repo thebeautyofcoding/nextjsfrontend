@@ -114,7 +114,7 @@ export const loginWithGoogle = (user) => {
         user).then(response => {
             
             
-           
+           console.log(response)
             return response
         }).catch(err => console.log(err))
 }

@@ -14,6 +14,8 @@ const LoginGoogle = () => {
         console.log(user)
 
         loginWithGoogle(user).then(data => {
+
+           data && console.log(data)
             if (data && data.data) {
                 if (data.data.error) {
               
