@@ -14,11 +14,13 @@ const LoginGoogle = () => {
         console.log(user)
 
         loginWithGoogle(user).then(data => {
-            console.log(data)
-            if (data.data.error) {
+            if (data && data.data) {
+                if (data.data.error) {
               
-            } else {
-                authenticate(data, () => {
+            }
+            }
+             else {
+                authenticate(data.data, () => {
                     console.log('456')
                     // if (isAuth() && isAuth().role === 1) {
                     //     Router.push('/admin')
