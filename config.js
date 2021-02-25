@@ -2,7 +2,7 @@
 
 import getConfig from 'next/config'
 
-const { process.env } = getConfig()
+
 
 export const API = process.env.PRODUCTION ? process.env.API_PRODUCTION : process.env.API_DEVELOPMENT
 
