@@ -1,13 +1,24 @@
+const Dotenv = require("dotenv-webpack");
 
 
 module.exports = {
+    webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+        // Add the new plugin to the existing webpack plugins
+        config.plugins.push(new Dotenv({ silent: true }));
+        return config;
+    },
 
-    env: {
-        PRODUCTION:true,
+        env: {
+        PRODUCTION: true,
+        APP_NAME: "justPractice",
         DOMAIN_PRODUCTION: "https://nextjsfrontend2.vercel.app",
         API_PRODUCTION: "https://justpractice123.herokuapp.com/api",
-        APP_NAME: "justPractice",
-        GOOGLE_CLIENT_ID: '684060683436-qrcsake9ivp5gua1e3ikd7vn1sunkkae.apps.googleusercontent.com'
+       
+        GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID
 
     }
 }
+
+
+
+
